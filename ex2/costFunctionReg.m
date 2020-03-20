@@ -20,11 +20,12 @@ grad = zeros(size(theta));
 %
 % hypothesis function
 h = sigmoid(X*theta);
+% ignore the first element of theta
+temp = theta; temp(1)=0;
 % cost function 
-J = 1/m*(-y'*log(h)-(1-y')*log(1-h))+lambda/(2*m)*(norm(theta)^2-theta(1)^2);
+J = 1/m*(-y'*log(h)-(1-y')*log(1-h))+lambda/(2*m)*norm(temp)^2;
 % gradient
-grad = 1/m*X'*(h-y)+lambda/m*theta;
-grad(1) = grad(1)-lambda/m*theta(1);
+grad = 1/m*X'*(h-y)+lambda/m*temp;
 
 % =============================================================
 

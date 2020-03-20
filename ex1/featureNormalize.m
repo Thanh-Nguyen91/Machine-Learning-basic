@@ -27,12 +27,10 @@ sigma = zeros(1, size(X, 2));
 %       
 
 for j = 1:size(X,2)
-    mu_temp = mean(X(:,j));
-    X_norm(:,j) = X(:,j)-mu_temp;
-    mu(j) = mu_temp;
-    sigma_temp = std(X_norm(:,j));
-    X_norm(:,j) = X_norm(:,j)/sigma_temp;
-    sigma(j) = sigma_temp;
+    mu(j) = mean(X(:,j));
+    X_norm(:,j) = X(:,j)-mu(j);
+    sigma(j) = std(X_norm(:,j));
+    X_norm(:,j) = X_norm(:,j)/sigma(j);
 end
 
 % ============================================================

@@ -18,9 +18,8 @@ p = zeros(m, 1);
 % hypothesis function
 h = sigmoid(X*theta);
 % prediction
-pos = h>=0.5; neg = h<0.5;
-p(pos) = 1; p(neg) = 0;
-
+thres = 0.5;
+p = double(h>= thres);
 % =========================================================================
 
 

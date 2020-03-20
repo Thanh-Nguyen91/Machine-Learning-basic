@@ -63,6 +63,8 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 %--------------------------
+%       Part 1
+%--------------------------
 % compute units of layer 2
 A2 = sigmoid([ones(m, 1) X]*Theta1');
 % compute units of layer 3 (output)
@@ -77,6 +79,8 @@ end
 % cost function 
 J = -J/m;
 %
+%--------------------------
+%       Part 2
 %--------------------------
 %
 for t = 1:m

@@ -13,8 +13,7 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-J = norm(X*theta-y)^2;
-J = J/(2*m);
+J = norm(X*theta-y)^2/(2*m);
 
 
 
